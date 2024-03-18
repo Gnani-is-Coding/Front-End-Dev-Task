@@ -14,9 +14,9 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000/login) for accessing Login page to see the result.
+Open [http://localhost:3000](https://front-end-dev-task-mu.vercel.app/login) for accessing Login page to see the result.
 
-Open [http://localhost:3000](http://localhost:3000/dashboard) for accessing dashboard page result.
+Open [http://localhost:3000](https://front-end-dev-task-mu.vercel.app/dashbiard) for accessing dashboard page result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
