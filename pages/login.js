@@ -1,7 +1,16 @@
 import Header from "@/components/Header"
+import { useSession, signIn, signOut } from "next-auth/react"
+import { useRouter } from "next/router"
 
 
 export default  function login() {
+    const { data: session } = useSession()
+    const router = useRouter()
+
+    if (session){
+        router.push('/dashboard')
+        return null
+    }
     return(
         <>
         <Header/>
@@ -18,7 +27,7 @@ export default  function login() {
                 <p className="font-lato text-black text-sm mt-2">Sign in to your account</p>
 
                 <div className="flex my-3">
-                <div className="flex items-center bg-[#ffffff] w-[180px] p-1 rounded-lg mr-3">
+                <button className="flex items-center bg-[#ffffff] w-[180px] p-1 rounded-lg mr-3 cursor-pointer" onClick={() => signIn()}>
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_0_347)">
                 <path d="M13.9926 7.13096C13.9926 6.55738 13.9449 6.13883 13.8419 5.70477H7.1394V8.2936H11.0736C10.9943 8.93695 10.566 9.90584 9.61414 10.5569L9.6008 10.6436L11.72 12.2478L11.8668 12.2622C13.2152 11.0452 13.9926 9.25473 13.9926 7.13096Z" fill="#4285F4"/>
@@ -34,9 +43,9 @@ export default  function login() {
                 </svg>
                 <p className="text-[#858585] text-sm px-2">Sign in with Google</p>
 
-                </div>
+                </button>
 
-                <div className="flex items-center bg-[#ffffff] w-[180px] p-1 rounded-lg">
+                <div className="flex items-center bg-[#ffffff] w-[180px] p-1 rounded-lg cursor-pointer" onclick={() => signIn()}>
                             <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_0_355)">
                 <path d="M6.34516 1.21952C7.27201 0.00716167 8.56055 0.00125122 8.56055 0.00125122C8.56055 0.00125122 8.75222 1.14107 7.83144 2.23908C6.84828 3.41151 5.73078 3.21966 5.73078 3.21966C5.73078 3.21966 5.52094 2.29759 6.34516 1.21952ZM5.84866 4.0181C6.32548 4.0181 7.21043 3.36763 8.36232 3.36763C10.3451 3.36763 11.1251 4.76781 11.1251 4.76781C11.1251 4.76781 9.59954 5.54189 9.59954 7.42017C9.59954 9.53904 11.5 10.2693 11.5 10.2693C11.5 10.2693 10.1715 13.9801 8.37708 13.9801C7.55292 13.9801 6.91217 13.4289 6.04378 13.4289C5.15883 13.4289 4.28065 14.0007 3.70868 14.0007C2.0701 14.0007 0 10.4806 0 7.65098C0 4.86704 1.7522 3.40664 3.39569 3.40664C4.46411 3.40664 5.29321 4.0181 5.84866 4.0181Z" fill="#999999"/>
