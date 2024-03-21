@@ -5,14 +5,12 @@ import LineChart from '@/components/LineChart'
 import { useState } from "react";
 import PieChart from "@/components/PieChart";
 import { getSession, signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/router";
 
 
 
 const Dashboard = () => {
     const [currentMonth, setMonth] = useState('jan-feb')
-    //const {data: session, status} = useSession({required: true})
-    const router = useRouter()
+    //const {data: session, status} = useSession({required: true})  //Client Side Rendering
     const {data:session} = useSession()
 
     // if (status !== 'authenticated'){
@@ -22,7 +20,8 @@ const Dashboard = () => {
     if (session) {
     return (
         <div className="bg-[#F5F5F5] p-8 lg:flex w-[full]">
-            <div className="bg-black rounded-xl items-center text-center hidden lg:block flex-col justify-between lg:w-[30vw]">
+
+            <div className="sidebar bg-black rounded-xl items-center text-center hidden lg:block flex-col justify-between lg:w-[30vw]">
                 <div className="flex-col justify-between ">
                     <h1 className="text-white text-3xl font-bold mt-12 mb-6">Board.</h1>
                     <div className="mt-8 flex-col justify-center items-center text-center">
