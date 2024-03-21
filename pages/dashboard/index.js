@@ -10,8 +10,8 @@ const Dashboard = () => {
     const [currentMonth, setMonth] = useState('jan-feb')
 
     return (
-        <div className="bg-[#F5F5F5] p-8 lg:flex ">
-            <div className="bg-black rounded-xl items-center text-center hidden lg:block flex-col justify-between w-[30vw]">
+        <div className="bg-[#F5F5F5] p-8 lg:flex w-[full]">
+            <div className="bg-black rounded-xl items-center text-center hidden lg:block flex-col justify-between lg:w-[30vw]">
                 <div className="flex-col justify-between ">
                     <h1 className="text-white text-3xl font-bold mt-12 mb-6">Board.</h1>
                     <div className="mt-8 flex-col justify-center items-center text-center">
@@ -78,7 +78,7 @@ const Dashboard = () => {
             </div>
 
 
-            <div className="lg:ml-3 w-[70vw]">
+            <div className="lg:ml-3 lg:w-[70vw] w-full">
             <div className="flex justify-between">
                 <h1 className="text-black text-xl font-extrabold">Dashboard</h1>
                 <div className="lg:hidden">

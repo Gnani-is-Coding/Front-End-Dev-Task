@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Header from "@/components/Header"
+import Dashboard from "./dashboard";
 
 
 export default function Home() {
   return (
       <div>
-        {/* <Header/> */}
+        <Dashboard/>
       </div>
   );
 }
