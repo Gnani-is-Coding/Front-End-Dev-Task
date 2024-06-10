@@ -22,7 +22,7 @@ const options={
     plugins: {
         legend:{
             display: true,
-            position: 'right'   //posirtions right
+            position: 'right'   //positions right
         },
 
     }

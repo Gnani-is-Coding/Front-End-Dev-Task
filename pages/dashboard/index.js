@@ -3,11 +3,20 @@ import { MdMenu } from "react-icons/md";
 import LineChart from '@/components/LineChart'
 import { useState } from "react";
 import PieChart from "@/components/PieChart";
+import { signOut } from "next-auth/react";
+import { useRouter } from "next/router";
 
+//TODO position sidebar well
 
 
 const Dashboard = () => {
     const [currentMonth, setMonth] = useState('jan-feb')
+    const router = useRouter()
+
+    const onClickLogOut = () => {
+        signOut({callbackUrl: '/login'})
+        router.replace("/login")
+    }
 
     return (
         <div className="bg-[#F5F5F5] p-8 lg:flex ">
@@ -81,6 +90,7 @@ const Dashboard = () => {
             <div className="lg:ml-3 w-[70vw]">
             <div className="flex justify-between">
                 <h1 className="text-black text-xl font-extrabold">Dashboard</h1>
+                <button onClick={onClickLogOut}>Logout</button>
                 <div className="lg:hidden">
                     <MdMenu className="text-3xl"/>
                 </div>
