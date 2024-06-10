@@ -22,10 +22,10 @@ export default NextAuth(authOptions)
 
 
 {/**
-GOOGLE_CLIENT_ID = 181531902204-mg2m06oik3f3nsd0e9b2gulfki1h78vh.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET =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
+google c_ID = 181531902204-mg2m06oik3f3nsd0e9b2gulfki1h78vh.apps.googleusercontent.com
+google c_secret =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
 
 
-GITHUB_CLIENT_ID = 2ddfe08044181172ce77
-GITHUB_CLIENT_SECRET = 8fac8118187e2734c08981527e2d42a7f44c5ed2
+github c_ID = 2ddfe08044181172ce77
+github c_secret = 8fac8118187e2734c08981527e2d42a7f44c5ed2
   */}
