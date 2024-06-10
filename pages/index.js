@@ -11,3 +11,5 @@ export default function Home() {
         <Dashboard/>
       </ProtectedRoute>
   );
+
+}

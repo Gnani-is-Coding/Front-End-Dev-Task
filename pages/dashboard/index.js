@@ -5,7 +5,7 @@ import LineChart from '@/components/LineChart'
 import { useState } from "react";
 import PieChart from "@/components/PieChart";
 
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 
@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 
 const Dashboard = () => {
     const [currentMonth, setMonth] = useState('jan-feb')
+    const {data: session} = useSession()
 
     const router = useRouter()
 
