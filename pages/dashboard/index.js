@@ -4,14 +4,25 @@ import { MdMenu } from "react-icons/md";
 import LineChart from '@/components/LineChart'
 import { useState } from "react";
 import PieChart from "@/components/PieChart";
-import { getSession, signOut, useSession } from "next-auth/react";
 
+import { signOut } from "next-auth/react";
+import { useRouter } from "next/router";
+
+
+//TODO position sidebar well
 
 
 const Dashboard = () => {
     const [currentMonth, setMonth] = useState('jan-feb')
-    //const {data: session, status} = useSession({required: true})  //Client Side Rendering
-    const {data:session} = useSession()
+
+    const router = useRouter()
+
+    const onClickLogOut = () => {
+        signOut({callbackUrl: '/login'})
+        router.replace("/login")
+    }
+
+   
 
     // if (status !== 'authenticated'){
     //     //For Client side renderrring , we use
@@ -91,10 +102,9 @@ const Dashboard = () => {
             <div className="lg:ml-3 lg:w-[70vw] w-full">
             <div className="flex justify-between items-center">
                 <h1 className="text-black text-xl font-extrabold">Dashboard</h1>
-                <div className="flex items-center">
-                    <Image src={session?.user.image} width={6} height={6} alt="user" className="mr-2 h-6 w-6 rounded-[100%]"/>
-                    <span className="text-black font-bold">Welcome {session?.user.name}</span></div>
-                <button className="bg-black text-[#ffffff] p-2 rounded-lg text-xs hidden lg:block" onClick={() => signOut()}>Sign Out</button>
+
+                <button onClick={onClickLogOut}>Logout</button>
+
                 <div className="lg:hidden">
                     <MdMenu className="text-3xl"/>
                 </div>

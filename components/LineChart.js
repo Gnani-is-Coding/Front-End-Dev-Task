@@ -10,7 +10,7 @@ ChartJs.register(LineElement,CategoryScale , LinearScale, PointElement, Legend, 
 //Toolztip- whne hoverred on it, shows the x,y coordinate values
 
 const data = {
-    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],  //x-axis labels
     datasets: [
         {
         label: 'Guest',
@@ -19,7 +19,7 @@ const data = {
         borderColor: '#E9A0A0',
         //pointBorderColor:'aqua',
         fill: true,
-        tension: 0.4,  //for curve
+        tension: 0.5,  //for curve
     },
     {
         label: 'User',

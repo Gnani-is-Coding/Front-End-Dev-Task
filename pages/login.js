@@ -5,10 +5,11 @@ import { useRouter } from "next/router"
 
 export default  function login() {
     const { data: session } = useSession()
+    console.log(session, "session")
     const router = useRouter()
 
     if (session){
-        router.push('/dashboard')
+        router.replace('/')
         return null
     }
     return(

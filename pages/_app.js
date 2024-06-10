@@ -8,3 +8,5 @@ export default function App({ Component, pageProps, session }) {
     </SessionProvider>
   )
 }
+
+//TODO make dashboard responsive
